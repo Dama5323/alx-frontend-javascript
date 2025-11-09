@@ -19,7 +19,7 @@ interface printTeacherFunction {
 }
 
 function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
+  return `${firstName}. ${lastName}`;
 }
 
 // Task 4: StudentClass interfaces and implementation
@@ -77,3 +77,4 @@ console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
 const student = new StudentClass("Alice", "Smith");
 console.log(student.displayName());
 console.log(student.workOnHomework());
+
