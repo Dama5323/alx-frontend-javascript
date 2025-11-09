@@ -40,14 +40,14 @@ class Teacher implements TeacherInterface {
 }
 
 function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === 'number' && salary < 500) {
+  if (salary < 500) {
     return new Teacher();
   }
   return new Director();
 }
 
 // Task 6: Type predicates and function execution
-function isDirector(employee: Director | Teacher): employee is Director {
+export function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
 
@@ -62,7 +62,7 @@ function executeWork(employee: Director | Teacher): string {
 // Task 7: String literal types
 type Subjects = 'Math' | 'History';
 
-function teachClass(todayClass: Subjects): string {
+function teachClass(todayClass:Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
   } else if (todayClass === 'History') {
