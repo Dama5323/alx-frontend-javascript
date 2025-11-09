@@ -8,8 +8,8 @@ interface Teacher {
   [key: string]: any;
 }
 
-// Task 2: Directors interface that extends Teacher
-interface Directors extends Teacher {
+// Task 2: Director interface that extends Teacher (FIXED: singular "Director")
+interface Director extends Teacher {
   numberOfReports: number;
 }
 
@@ -61,7 +61,8 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-const director1: Directors = {
+// Also update the variable type from Directors to Director
+const director1: Director = {
   firstName: 'John',
   lastName: 'Doe',
   location: 'London',
