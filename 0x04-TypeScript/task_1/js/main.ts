@@ -8,7 +8,7 @@ interface Teacher {
   [key: string]: any;
 }
 
-// Task 2: Directors interface extending Teacher
+// Task 2: Directors interface that extends Teacher
 interface Directors extends Teacher {
   numberOfReports: number;
 }
@@ -68,6 +68,12 @@ const director1: Directors = {
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
+
 console.log(director1);
 
 console.log(printTeacher("John", "Doe"));
+
+// StudentClass example
+const student = new StudentClass("Alice", "Smith");
+console.log(student.displayName());
+console.log(student.workOnHomework());
