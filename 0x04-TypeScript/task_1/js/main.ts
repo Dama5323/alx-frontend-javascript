@@ -18,9 +18,9 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = function(firstName: string, lastName: string): string {
-  return `${firstName}. ${lastName}`;
-};
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
+  return `${firstName.charAt(0)}. ${lastName}`;
+}
 
 // Task 4: StudentClass interfaces and implementation
 interface StudentConstructor {
@@ -32,7 +32,6 @@ interface StudentClassInterface {
   displayName(): string;
 }
 
-// FIXED: Exact class declaration the checker wants
 class StudentClass {
   private firstName: string;
   private lastName: string;
@@ -72,7 +71,7 @@ const director1: Director = {
 
 console.log(director1);
 
-console.log(printTeacher("John", "Doe"));
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
 
 // StudentClass example
 const student = new StudentClass("Alice", "Smith");
