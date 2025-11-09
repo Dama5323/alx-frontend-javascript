@@ -13,14 +13,14 @@ interface Director extends Teacher {
   numberOfReports: number;
 }
 
-// Task 3: printTeacher function and interface
+// Task 3: printTeacher function and interface - ALL IN ONE
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = function(firstName: string, lastName: string): string {
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
   return `${firstName}. ${lastName}`;
-};
+}
 
 // Task 4: StudentClass interfaces and implementation
 interface StudentConstructor {
@@ -71,7 +71,7 @@ const director1: Director = {
 
 console.log(director1);
 
-console.log(printTeacher("John", "Doe"));
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
 
 // StudentClass example
 const student = new StudentClass("Alice", "Smith");
