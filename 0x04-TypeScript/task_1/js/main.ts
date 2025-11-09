@@ -8,7 +8,7 @@ interface Teacher {
   [key: string]: any;
 }
 
-// Task 2: Director interface that extends Teacher (FIXED: singular "Director")
+// Task 2: Director interface that extends Teacher
 interface Director extends Teacher {
   numberOfReports: number;
 }
@@ -18,9 +18,10 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+// FIXED: Use traditional function declaration instead of arrow function
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-};
+}
 
 // Task 4: StudentClass interfaces and implementation
 interface StudentConstructor {
@@ -61,7 +62,6 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-// Also update the variable type from Directors to Director
 const director1: Director = {
   firstName: 'John',
   lastName: 'Doe',
