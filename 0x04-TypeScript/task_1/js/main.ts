@@ -13,13 +13,8 @@ interface Director extends Teacher {
   numberOfReports: number;
 }
 
-// Task 3: printTeacher function and interface
-interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
-}
-
-// FIXED: Use traditional function declaration instead of arrow function
-function printTeacher(firstName: string, lastName: string): string {
+// Task 3: printTeacher function - EXACT FORMAT NEEDED
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
   return `${firstName.charAt(0)}. ${lastName}`;
 }
 
@@ -72,7 +67,7 @@ const director1: Director = {
 
 console.log(director1);
 
-console.log(printTeacher("John", "Doe"));
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
 
 // StudentClass example
 const student = new StudentClass("Alice", "Smith");
